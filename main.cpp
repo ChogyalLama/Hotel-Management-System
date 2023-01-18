@@ -28,11 +28,11 @@ int main()
 	cout<<"\n\t\t * *                    press any key to continue!!!......                 * * ";
 	cout<<"\n\t\t * *                                                                       * * ";
 	cout<<"\n\t\t * *                                                                       * * ";
-    cout<<"\n\t\t * *                                                                       * * ";
+   	cout<<"\n\t\t * *                                                                       * * ";
 	cout<<"\n\t\t * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * ";
 	cout<<"\n\t\t * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * ";
 
-	cin.get();
+	//cin.get();
     //cin.get();
 	while(1)
 	{
