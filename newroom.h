@@ -20,7 +20,7 @@ void room::showall(int i)
 }
 int genrid()
 {
-	fstream f("C:\\Users\\lamac\\OneDrive\\Documents\\Documents imp\\class 11\\Hotel_management\\room.txt", ios::in | ios::binary | ios::out);
+	fstream f("C:\\Hotel_management\\room.txt", ios::in | ios::binary | ios::out);
 	if(!f){
 		cout<<"\tFile error "<<endl;
 		return 0;
@@ -45,7 +45,7 @@ void update_room()
 	char ch;
 	room s;
 	do{
-		ofstream fout("C:\\Users\\lamac\\OneDrive\\Documents\\Documents imp\\class 11\\Hotel_management\\room.txt", ios::app | ios::binary);
+		ofstream fout("C:\\Hotel_management\\room.txt", ios::app | ios::binary);
 		if(!fout){
 			cout<<"Error"<<endl;
 			return;
@@ -69,7 +69,7 @@ void update_room()
 }
 void display_room()
 {
-	ifstream fin("C:\\Users\\lamac\\OneDrive\\Documents\\Documents imp\\class 11\\Hotel_management\\room.txt", ios::in | ios::binary);
+	ifstream fin("C:\\Hotel_management\\room.txt", ios::in | ios::binary);
 	if(!fin){
 		cout<<"Error"<<endl;
 		return;
@@ -90,8 +90,8 @@ void display_room()
 }
 void del_room()
 {
-	ifstream fin("C:\\Users\\lamac\\OneDrive\\Documents\\Documents imp\\class 11\\Hotel_management\\room.txt", ios::in | ios::binary);
-	ofstream fout("C:\\Users\\lamac\\OneDrive\\Documents\\Documents imp\\class 11\\Hotel_management\\temp.txt", ios::app | ios::binary);
+	ifstream fin("C:\\Hotel_management\\room.txt", ios::in | ios::binary);
+	ofstream fout("C:\\Hotel_management\\temp.txt", ios::app | ios::binary);
 	if(!fin || !fout){
 		cout<<"File not found or inacessible"<<endl;
 		return;
@@ -110,8 +110,8 @@ void del_room()
 
 	fin.close();
 	fout.close();
-	remove("C:\\Users\\lamac\\OneDrive\\Documents\\Documents imp\\class 11\\Hotel_management\\room.txt");
-	rename("C:\\Users\\lamac\\OneDrive\\Documents\\Documents imp\\class 11\\Hotel_management\\temp.txt","C:\\Users\\lamac\\OneDrive\\Documents\\Documents imp\\class 11\\Hotel_management\\room.txt");
+	remove("C:\\Hotel_management\\room.txt");
+	rename("C:\\Hotel_management\\temp.txt","C:\\Hotel_management\\room.txt");
 }
 /*
 void room_bill()
