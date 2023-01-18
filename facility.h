@@ -22,7 +22,7 @@ void service::showall(int i)
 }
 int gen_sid()
 {
-	ifstream fin("C:\\Users\\lamac\\OneDrive\\Documents\\Documents imp\\class 11\\Hotel_management\\fac.txt", ios::in | ios::binary);
+	ifstream fin("C:\\Hotel_management\\fac.txt", ios::in | ios::binary);
 	if(!fin){
 		cout<<"\tFile error "<<endl;
 		return 0;
@@ -46,7 +46,7 @@ void update_service()
 	char ch;
 	service s;
 	do{
-		ofstream fout("C:\\Users\\lamac\\OneDrive\\Documents\\Documents imp\\class 11\\Hotel_management\\fac.txt", ios::app | ios::binary);
+		ofstream fout("C:\\Hotel_management\\fac.txt", ios::app | ios::binary);
 		if(!fout){
 			cout<<"Error"<<endl;
 			return;
@@ -72,7 +72,7 @@ void update_service()
 }
 void display_service()
 {
-	ifstream fin("C:\\Users\\lamac\\OneDrive\\Documents\\Documents imp\\class 11\\Hotel_management\\fac.txt", ios::in | ios::binary);
+	ifstream fin("C:\\Hotel_management\\fac.txt", ios::in | ios::binary);
 	if(!fin){
 		cout<<"Error"<<endl;
 		return;
@@ -93,8 +93,8 @@ void display_service()
 }
 void delete_service()
 {
-	ifstream fin("C:\\Users\\lamac\\OneDrive\\Documents\\Documents imp\\class 11\\Hotel_management\\fac.txt", ios::in | ios::binary);
-	ofstream fout("C:\\Users\\lamac\\OneDrive\\Documents\\Documents imp\\class 11\\Hotel_management\\temp.txt", ios::app | ios::binary);
+	ifstream fin("C:\\Hotel_management\\fac.txt", ios::in | ios::binary);
+	ofstream fout("C:\\Hotel_management\\temp.txt", ios::app | ios::binary);
 	if(!fin || !fout){
 		cout<<"File not found or inacessible"<<endl;
 		return;
@@ -113,8 +113,8 @@ void delete_service()
 	cin.get();
 	fin.close();
 	fout.close();
-	remove("C:\\Users\\lamac\\OneDrive\\Documents\\Documents imp\\class 11\\Hotel_management\\fac.txt");
-	rename("C:\\Users\\lamac\\OneDrive\\Documents\\Documents imp\\class 11\\Hotel_management\\temp.txt","C:\\Users\\lamac\\OneDrive\\Documents\\Documents imp\\class 11\\Hotel_management\\fac.txt");
+	remove("C:\\Hotel_management\\fac.txt");
+	rename("C:\\Hotel_management\\temp.txt","C:\\Hotel_management\\fac.txt");
 
 }
 void mainfacility()
