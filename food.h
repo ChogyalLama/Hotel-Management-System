@@ -24,7 +24,7 @@ void menu::showall(int i)
 }
 int genfid()
 {
-	fstream f("C:\\Users\\lamac\\OneDrive\\Documents\\Documents imp\\class 11\\Hotel_management\\menu.txt", ios::in | ios::binary | ios::out);
+	fstream f("C:\\Hotel_management\\menu.txt", ios::in | ios::binary | ios::out);
 	if(!f){
 		cout<<"\tFile error "<<endl;
 		return 0;
@@ -50,7 +50,7 @@ void update()
 	char ch;
 	menu s;
 	do{
-		ofstream fout("C:\\Users\\lamac\\OneDrive\\Documents\\Documents imp\\class 11\\Hotel_management\\menu.txt", ios::app | ios::binary);
+		ofstream fout("C:\\Hotel_management\\menu.txt", ios::app | ios::binary);
 		if(!fout)
 		{
 			cout<<"Error"<<endl;
@@ -80,7 +80,7 @@ void update()
 }
 void display()
 {
-	ifstream fin("C:\\Users\\lamac\\OneDrive\\Documents\\Documents imp\\class 11\\Hotel_management\\menu.txt", ios::in | ios::binary);
+	ifstream fin("C:\\Hotel_management\\menu.txt", ios::in | ios::binary);
 	if(!fin){
 		cout<<"Error"<<endl;
 		return;
@@ -101,8 +101,8 @@ void display()
 }
 void del()
 {
-	ifstream fin("C:\\Users\\lamac\\OneDrive\\Documents\\Documents imp\\class 11\\Hotel_management\\menu.txt", ios::in | ios::binary);
-	ofstream fout("C:\\Users\\lamac\\OneDrive\\Documents\\Documents imp\\class 11\\Hotel_management\\temp.txt", ios::app | ios::binary);
+	ifstream fin("C:\\Hotel_management\\menu.txt", ios::in | ios::binary);
+	ofstream fout("C:\\Hotel_management\\temp.txt", ios::app | ios::binary);
 	if(!fin || !fout){
 		cout<<"File not found or inacessible"<<endl;
 		return;
@@ -121,13 +121,13 @@ void del()
     cin.get();
 	fin.close();
 	fout.close();
-	remove("C:\\Users\\lamac\\OneDrive\\Documents\\Documents imp\\class 11\\Hotel_management\\menu.txt");
-	rename("C:\\Users\\lamac\\OneDrive\\Documents\\Documents imp\\class 11\\Hotel_management\\temp.txt","C:\\Users\\lamac\\OneDrive\\Documents\\Documents imp\\class 11\\Hotel_management\\menu.txt");
+	remove("C:\\Hotel_management\\menu.txt");
+	rename("C:\\Hotel_management\\temp.txt","C:\\Hotel_management\\menu.txt");
 
 }
 void search_food()
 {
-	ifstream fin("C:\\Users\\lamac\\OneDrive\\Documents\\Documents imp\\class 11\\Hotel_management\\menu.txt", ios::in | ios::binary);
+	ifstream fin("C:\\Hotel_management\\menu.txt", ios::in | ios::binary);
     if(!fin){
 		cout<<"Error"<<endl;
 		return;
@@ -208,50 +208,3 @@ void mainfood()
         }
 	}while(ch>=1 && ch<=4);
 }
-
-/*void food_bill()
-{
-    menu m;
-    char ch;
-    int food_id, i=0, qty;
-    int bn=bill_details(); // generate bill number
-    do{
-        int x=0;
-        gotoxy(45,2);
-		cout<<"                               ";
-		gotoxy(45,2);
-        cout<<"Enter food id : ";
-        cin>>food_id;
-
-        ifstream fin("C:\\Users\\lamac\\OneDrive\\Documents\\Documents imp\\class 11\\Hotel_management\\menu.txt", ios::in | ios::binary);
-        while(fin.read((char*)&m,sizeof(m))){
-            if(m.food_id==food_id){
-                gotoxy(45,2);
-                cout<<"                                ";
-                gotoxy(45,2);
-                cout<<"Enter quantity : ";
-                cin>>qty;
-
-                bill_items(bn, m.price, m.food, qty, i);
-                i++;
-                x=1;
-            }
-        }
-        if(x==0){
-            gotoxy(45,2);
-			cout<<"                           ";
-			gotoxy(45,2);
-            cout<<"Invalid food id.";
-            ch='y';
-            cin.get();
-            cin.get();
-        }
-        else{
-            gotoxy(45,2);
-            cout<<"                                  ";
-            gotoxy(45,2);
-            cout<<"More food ? Y/N ";
-            cin>>ch;
-        }
-    }while((ch=='Y' || ch=='y') && i<7);
-}*/
