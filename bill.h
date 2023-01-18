@@ -72,7 +72,7 @@ void BillItem::billLayout_aadhaar()
 
 int genbillno()
 {
-	ifstream f("C:\\Users\\lamac\\OneDrive\\Documents\\Documents imp\\class 11\\Hotel_management\\billdet.txt", ios::in | ios::binary);
+	ifstream f("C:\\Hotel_management\\billdet.txt", ios::in | ios::binary);
 	if(!f)
 	{
 		cout<<"\tFile error "<<endl;
@@ -100,7 +100,7 @@ int bill_details()
 	billLayout();
 
     ifstream fin;
-	ofstream fbd("C:\\Users\\lamac\\OneDrive\\Documents\\Documents imp\\class 11\\Hotel_management\\billdet.txt", ios::app | ios::binary);
+	ofstream fbd("C:\\Hotel_management\\billdet.txt", ios::app | ios::binary);
 
     int bn=genbillno();
 	bd.billno=bn;
@@ -139,7 +139,7 @@ int bill_details()
 		cout<<"                                   ";
 
         checkin c;
-        fin.open("C:\\Users\\lamac\\OneDrive\\Documents\\Documents imp\\class 11\\Hotel_management\\checkin.txt", ios::in | ios::binary);
+        fin.open("C:\\Hotel_management\\checkin.txt", ios::in | ios::binary);
 		while(fin.read((char*)&c,sizeof(c))){
 			if(strcmp(c.adharno,adno)==0){
 				gotoxy(13,5);
@@ -177,7 +177,7 @@ int bill_details()
 
 void bill_items(int bill_no, double price, char* desc, int qty, int i)
 {
-    ofstream fbi("C:\\Users\\lamac\\OneDrive\\Documents\\Documents imp\\class 11\\Hotel_management\\billitem.txt", ios::app | ios::binary);
+    ofstream fbi("C:\\Hotel_management\\billitem.txt", ios::app | ios::binary);
 
     bi[i].billno=bill_no;
 
@@ -220,8 +220,8 @@ void show_bill_id()
 	ifstream fbi;
 
   top:
-	fbd.open("C:\\Users\\lamac\\OneDrive\\Documents\\Documents imp\\class 11\\Hotel_management\\billdet.txt", ios::in | ios::binary);
-	fbi.open("C:\\Users\\lamac\\OneDrive\\Documents\\Documents imp\\class 11\\Hotel_management\\billitem.txt", ios::in | ios::binary);
+	fbd.open("C:\\Hotel_management\\billdet.txt", ios::in | ios::binary);
+	fbi.open("C:\\Hotel_management\\billitem.txt", ios::in | ios::binary);
 	if(!fbd || !fbi){
 		cout<<"File error...Bill cannot be shown"<<endl;
 		return;
@@ -295,8 +295,8 @@ void show_bill_id()
 void show_bill_aadhaar()
 {
     system("cls");
-    ifstream fbd("C:\\Users\\lamac\\OneDrive\\Documents\\Documents imp\\class 11\\Hotel_management\\billdet.txt", ios::in | ios::binary);
-	ifstream fbi("C:\\Users\\lamac\\OneDrive\\Documents\\Documents imp\\class 11\\Hotel_management\\billitem.txt", ios::in | ios::binary);
+    ifstream fbd("C:\\Hotel_management\\billdet.txt", ios::in | ios::binary);
+    ifstream fbi("C:\\Hotel_management\\billitem.txt", ios::in | ios::binary);
 
     char aadhaar[13];
     int i=0;
@@ -329,8 +329,8 @@ void bill()
 	billLayout();
 
 	ifstream fin;
-	ofstream fbd("C:\\Users\\lamac\\OneDrive\\Documents\\Documents imp\\class 11\\Hotel_management\\billdet.txt", ios::app | ios::binary);
-	ofstream fbi("C:\\Users\\lamac\\OneDrive\\Documents\\Documents imp\\class 11\\Hotel_management\\billitem.txt", ios::app | ios::binary);
+	ofstream fbd("C:\\Hotel_management\\billdet.txt", ios::app | ios::binary);
+	ofstream fbi("C:\\Hotel_management\\billitem.txt", ios::app | ios::binary);
 
 	int bn=genbillno();
 	bd.billno=bn;
@@ -372,7 +372,7 @@ void bill()
 		gotoxy(45,2);
 		cout<<"                                   ";
 
-        fin.open("C:\\Users\\lamac\\OneDrive\\Documents\\Documents imp\\class 11\\Hotel_management\\checkin.txt", ios::in | ios::binary);
+        fin.open("C:\\Hotel_management\\checkin.txt", ios::in | ios::binary);
 		while(fin.read((char*)&c,sizeof(c))){
 			if(strcmp(c.adharno,adno)==0){
 				gotoxy(13,5);
@@ -417,7 +417,7 @@ void bill()
 		cout<<"Enter your roomid : ";
 		cin>>id;
 
-		fin.open("C:\\Users\\lamac\\OneDrive\\Documents\\Documents imp\\class 11\\Hotel_management\\room.txt", ios::in | ios::binary);
+		fin.open("C:\\Hotel_management\\room.txt", ios::in | ios::binary);
         while(fin.read((char*)&r,sizeof(r))){
             if(r.room_id==id){
 				bi[i].slno=i+1;
@@ -478,7 +478,7 @@ void bill()
 	cin>>ch;
 	while(ch=='Y' || ch=='y'){
 
-		ifstream ff("C:\\Users\\lamac\\OneDrive\\Documents\\Documents imp\\class 11\\Hotel_management\\menu.txt", ios::in | ios::binary);
+		ifstream ff("C:\\Hotel_management\\menu.txt", ios::in | ios::binary);
 
 		gotoxy(45,2);
 		cout<<"                               ";
@@ -547,7 +547,7 @@ void bill()
 	cin>>ch;
 
 	while(ch=='Y' || ch=='y'){
-		ifstream fl("C:\\Users\\lamac\\OneDrive\\Documents\\Documents imp\\class 11\\Hotel_management\\fac.txt", ios::in | ios::binary);
+		ifstream fl("C:\\Hotel_management\\fac.txt", ios::in | ios::binary);
 
 		gotoxy(45,2);
 		cout<<"                               ";
