@@ -9,4 +9,4 @@ Currently we can:
 
 It is made using codeblocks software.
 
-![hms](https://user-images.githubusercontent.com/122439494/212462237-b89038be-c26f-40e4-a2bf-fe1d550bbadc.png)
+![hms](https://user-images.githubusercontent.com/122439494/213235670-c057b237-232d-435a-a291-61ea48634cc4.png)
