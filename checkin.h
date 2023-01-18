@@ -42,7 +42,7 @@ void checkin::showid(int i)
 
 int getcheckinid()
 {
-	fstream f("C:\\Users\\lamac\\OneDrive\\Documents\\Documents imp\\class 11\\Hotel_management\\checkin.txt", ios::in | ios::binary | ios::out);
+	fstream f("C:\\Hotel_management\\checkin.txt", ios::in | ios::binary | ios::out);
 	if(!f){
 		cout<<"\tFile error "<<endl;
 		return 0;
@@ -64,8 +64,8 @@ int getcheckinid()
 }
 void read()
 {
-	ofstream fout("C:\\Users\\lamac\\OneDrive\\Documents\\Documents imp\\class 11\\Hotel_management\\checkin.txt", ios::app | ios::binary);
-    ifstream fin("C:\\Users\\lamac\\OneDrive\\Documents\\Documents imp\\class 11\\Hotel_management\\checkin.txt", ios::in | ios::binary);
+	ofstream fout("C:\\Hotel_management\\checkin.txt", ios::app | ios::binary);
+    ifstream fin("C:\\Hotel_management\\checkin.txt", ios::in | ios::binary);
 	if(!fout || !fin){
 		cout<<"File error."<<endl;
 		return;
@@ -130,7 +130,7 @@ void read()
 }
 void show()
 {
-	ifstream fin("C:\\Users\\lamac\\OneDrive\\Documents\\Documents imp\\class 11\\Hotel_management\\checkin.txt", ios::in | ios::binary);
+	ifstream fin("C:\\Hotel_management\\checkin.txt", ios::in | ios::binary);
 	if(!fin){
 		cout<<"File error !"<<endl;
 		return;
